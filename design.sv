@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 // Synchronous FIFO (the DUT)
 //
 // - One clock for both read and write.
