@@ -33,9 +33,10 @@ class generator;
 
   task run();
     run_phase("fill",   30, 90, 10);   // mostly writes  -> reach full
-    run_phase("both",    5, 100, 100); // read+write while full
-    run_phase("drain",  30, 10, 90);   // mostly reads   -> reach empty
+    run_phase("drain",  30, 10, 90);   // mostly reads   -> read while full, then reach empty
     run_phase("both",    5, 100, 100); // read+write while empty
+    run_phase("fill",   30, 90, 10);   // full again
+    run_phase("both",    5, 100, 100); // read+write while full
     run_phase("mixed", 200, 50, 50);   // random traffic
   endtask
 
