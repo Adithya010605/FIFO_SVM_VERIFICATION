@@ -32,11 +32,6 @@ class transaction;
     rd_en dist {1 := rd_weight, 0 := 100 - rd_weight};
   }
 
-  // Don't waste cycles doing nothing.
-  constraint c_not_idle {
-    wr_en || rd_en;
-  }
-
   // Hit the corner values 0x00 and 0xFF more often than pure random would.
   constraint c_data_corners {
     din dist {8'h00 :/ 10, 8'hFF :/ 10, [8'h01:8'hFE] :/ 80};
