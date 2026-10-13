@@ -1,0 +1,7 @@
+# Simulation outputs
+*.vcd
+*.wlf
+*.log
+obj_dir/
+work/
+transcript
